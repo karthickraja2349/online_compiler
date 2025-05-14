@@ -79,9 +79,6 @@ PlayCodeIDE is a lightweight online compiler that allows users to write, compile
 
 ---
 
-## 📸 Screenshot
-
-> *(Insert a screenshot of main.html editor and terminal interface here)*
 
 ---
 
