@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WebSocket Terminal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: #000;
+      color: #0f0;
+      font-family: monospace;
+      margin: 0;
+      padding: 10px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    #output {
+      flex: 1;
+      white-space: pre-wrap;
+      overflow-y: auto;
+      margin-bottom: 10px;
+      padding: 10px;
+      background-color: #111;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      background: #111;
+      color: #0f0;
+      border: none;
+      font-family: monospace;
+      font-size: 16px;
+      box-sizing: border-box;
+      border-radius: 4px;
+    }
+
+    @media (max-width: 768px) {
+      #output {
+        font-size: 14px;
+        padding: 8px;
+      }
+
+      input {
+        padding: 10px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="output"></div>
+  <input id="input" placeholder="Type input and press Enter" autofocus>
+  <script>
+    const output = document.getElementById('output');
+    const input = document.getElementById('input');
+    const ws = new WebSocket("ws://" + location.host + "/webSocketTerminal/terminal");
+
+    ws.onmessage = (event) => {
+      output.textContent += event.data;
+      output.scrollTop = output.scrollHeight;
+    };
+
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        ws.send(input.value);
+        input.value = '';
+      }
+    });
+  </script>
+</body>
+</html>
+
