@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> PlayCodeIDE </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Write Your Code</h1>
+
+    <!-- Language Selection -->
+    <label for="language">Select a Language:</label>
+    <select id="language" name="language">
+        <option value="java">Java</option>
+        <option value="c">C</option>
+        <option value="python">Python</option>
+        <option value="c++">C++</option>
+    </select><br><br>
+
+    <!-- Code Editor -->
+    <textarea id="codeEditor" placeholder="Write your code here... // Your first prioity class must be named as Main. use println() instead of print()"></textarea><br><br>
+    
+    <!-- Run Button -->
+    <button id="runCode">Run</button>
+   <!--  
+<div id="output" style="white-space: pre-wrap;"></div>
+
+<input type="text" id="userInput" placeholder="Enter input for program" />
+<button id="sendInput">Send</button>
+    <!-- Output Display -->
+    
+    <div id="output"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
