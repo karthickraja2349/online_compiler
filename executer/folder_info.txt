@@ -1,0 +1,20 @@
+This folder is responsible for the runtime and terminal-like interaction with the compiled code.
+
+Contents:
+index.html
+Terminal UI interface.
+
+Shows live output from executed code via WebSocket.
+Accepts user input and sends it to the Java program.
+
+TerminalWebSocket.java
+WebSocket endpoint (/terminal).
+Launches Main.class using java -cp.
+Streams program output to browser.
+Accepts and forwards user input to the program.
+Deletes Main.java and Main.class after execution ends.
+Also invokes cleanup script.
+
+deleteFiles.sh
+Bash script to delete all files in the logs directory.
+Used for cleanup after execution to keep the environment fresh.
