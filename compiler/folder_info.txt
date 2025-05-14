@@ -1,0 +1,34 @@
+This folder serves as the code writing interface where users write and submit their code.
+
+Contents:
+main.html
+Main web interface.
+
+Contains:
+Language selector
+Text area for writing code
+Run button
+Output display
+
+script.js
+Handles user interaction.
+Sends code to backend via /saveCode servlet.
+Redirects to terminal interface upon successful compilation.
+
+styles.css
+Styling for main.html.
+Implements a dark-themed code editor and mobile responsiveness.
+
+SaveCodeServlet.java
+Java servlet that:
+
+Receives submitted code
+
+Saves it as Main.java
+
+Compiles it using javac
+
+Responds with success/failure message
+
+Optionally can trigger redirection or execution (controlled by script.js).
+
