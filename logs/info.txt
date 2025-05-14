@@ -1,0 +1,1 @@
+This folder acts as a temperory storage for the compiled classes
