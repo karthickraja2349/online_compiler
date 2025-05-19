@@ -19,8 +19,8 @@ public class TerminalWebSocket {
     private BufferedWriter writer;
 
     @OnOpen
-public void onOpen(Session session) {
-    try {
+   public void onOpen(Session session) {
+     try {
         ProcessBuilder builder = new ProcessBuilder(
             "java", "-cp", "/home/ayyappankalai/Server/apache-tomcat-10.1.34/webapps/webSocketTerminal/logs", "Main"
         );
